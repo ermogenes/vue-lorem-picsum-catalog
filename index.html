@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <main id="app">
+      <h1>Lorem Picsum Catalog</h1>
+      <section id="catalog">
+        <article v-for="pic in pics" :data-id="pic.id">
+          <a :href="pic.download_url" target="_blank" class="pic">
+            <img :src="pic.loremPicsumUrl" alt="click to copy url to image" />
+          </a>
+          <span class="author">{{pic.author}}</span>
+          <div class="dimensions">
+            <div class="size">
+              <span class="width">{{pic.width}}</span>
+              <span>x</span>
+              <span class="height">{{pic.height}}</span>
+            </div>
+            <span class="ratio">{{pic.ratio}}</span>
+            <div class="orientation">
+              <span
+                class="material-icons-round"
+                v-if="pic.orientation === 'square'"
+              >
+                crop_square
+              </span>
+              <span
+                class="material-icons-round"
+                v-if="pic.orientation === 'portrait'"
+              >
+                crop_portrait
+              </span>
+              <span
+                class="material-icons-round"
+                v-if="pic.orientation === 'landscape'"
+              >
+                crop_landscape
+              </span>
+            </div>
+          </div>
+          <div class="use">
+            <a
+              href="#"
+              v-on:click.prevent="copyUrl($event)"
+              :data-url="pic.download_url"
+              title="click to copy url to image"
+            >
+              <span class="material-icons-round"> content_copy </span>
+            </a>
+            <a
+              :href="pic.download_url"
+              target="_blank"
+              title="click to open image in new window"
+            >
+              <span class="material-icons-round"> open_in_new </span>
+            </a>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

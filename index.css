@@ -1,0 +1,104 @@
+:root {
+  --color-primary: #333;
+  --link-primary: #99f;
+  --color-secondary: #999;
+  --text-normal: 14px;
+
+  font-size: var(--text-normal);
+  font-family: 'Inconsolata', monospace;
+}
+
+#app > h1 {
+  text-align: center;
+}
+
+#catalog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  height: 100vh;
+  color: var(--color-primary);
+  font-size: 0.75rem;
+}
+
+#catalog a {
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+
+#catalog img {
+  border-radius: 5%;
+}
+
+#catalog article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+
+  height: 15em;
+  width: 15em;
+  margin: 0.75em;
+  padding: 0.5em;
+  border: 1px solid var(--color-secondary);
+  border-radius: 5%;
+  box-shadow: 1px 1px 1px var(--color-secondary);
+  text-align: center;
+}
+
+#catalog .author {
+  color: var(--color-secondary);
+}
+
+#catalog .dimensions {
+  display: flex;
+  justify-content: space-around;
+}
+
+#catalog .use {
+  align-self: space-evenly;
+  display: flex;
+  justify-content: space-around;
+}
+
+#catalog .size {
+  flex: 4;
+}
+
+#catalog .size * {
+  padding: 0 0.25ch;
+}
+
+#catalog .orientation,
+#catalog .ratio {
+  flex: 1;
+}
+
+/* material icons requirements */
+
+.material-icons-round {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1em; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
